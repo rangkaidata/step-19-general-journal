@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/desain.css">
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="css/popup.css">
+		<title>Akuntansi Online</title>
+	</head>
+<body>
+	<h4 style="color:red;text-align:center">App Step 19: general journal</h4>
+	<div id="demo">
+		<div id="menu">Menu</div>
+		<div id="sub_menu" style="display:none;">Submenu</div>
+	
+		<main id="main">
+			<h1 id="modul">Modul</h1>
+			<h2 id="metode">Metode</h2>
+			<h4 id="msg">Message</h4>
+			<div id="btn">Button</div>
+			<div id="app">Data app</div>
+		</main>
+	
+		<!--ini untuk tampilkan form popup-->
+		<div id="blank">
+			POP UP
+			<div id="popup">
+				<h1 id="popup_modul"></h1>
+				<div id="popup_metode"></div>
+				<div id="popup_button"></div>
+				<div id="popup_content"></div>
+			</div>
+		<div>	
+	</div>
+
+	<script src="js/function.js"></script>
+	<script src="js/login.js"></script>
+	<script src="js/register.js"></script>
+	<script src="js/forgot.js"></script>
+	<script src="js/home.js"></script>
+	<script src="js/index.js"></script>	
+	<script>
+		// https://www.w3schools.com/js/js_performance.asp
+		// PENTING!!! agar 'script js' yg tidak digunakan, tidak aktif/diikutkan.
+		// hanya 'script js' aktif yg dipanggil.
+		window.onload = function() {
+			loginRead();
+			
+			var element = document.createElement("script");
+			var element2=document.createElement("script");
+			var element3=document.createElement("script");
+			
+			switch (modul_aktif){
+			case 'logout':
+				element.src = "js/logout.js";
+				break;
+			case 'company':
+				element.src = "js/company.js";
+				element2.src="js/image.js";
+				break;
+			case 'blok':
+				element.src = "js/blok.js";
+				break;
+			case 'notes':
+				element.src = "js/notes.js";
+				break;
+			case 'default':
+				element.src = "js/default.js";
+				break;
+			case 'user_profile':
+				element.src = "js/user_profile.js";
+				element2.src="js/image.js";
+				break;
+			case 'company_profile':
+				element.src = "js/company_profile.js";
+				break;
+			case 'accounts':
+				element.src = "js/accounts.js";
+				element2.src= "js/import_data.js";
+				break;
+			case 'manage_users':
+				element.src = "js/manage_users.js";
+				break;
+			case 'join_user':
+				element.src = "js/join_user.js";
+				break;
+			case 'account_balance':
+				element.src = "js/account_opening.js"
+				element2.src = "js/accounts.js"
+				break;
+			case 'journals':
+				element.src = "js/journals.js";
+				element2.src= "js/account_look.js"
+				element3.src= "js/import_data.js";
+				break;
+			case 'general_journal':
+				element.src= "js/general_journal.js";
+				break;
+			
+			default:
+			}
+
+			document.body.appendChild(element);
+			document.body.appendChild(element2);
+			document.body.appendChild(element3);
+		};
+		
+	</script>
+</body>
+</html> 
